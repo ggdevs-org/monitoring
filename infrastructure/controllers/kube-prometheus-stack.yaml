@@ -75,17 +75,8 @@ spec:
             memory: 64Mi
           limits:
             memory: 256Mi
-        storage:
-          volumeClaimTemplate:
-            spec:
-              accessModes: ["ReadWriteOnce"]
-              resources:
-                requests:
-                  storage: 5Gi
-
-    # Node exporter for node-level metrics (required for Dashboard 1860)
-    nodeExporter:
-      enabled: true
+          storage:
+            emptyDir: {}
 
     # Kube-state-metrics for Kubernetes object metrics
     kubeStateMetrics:
