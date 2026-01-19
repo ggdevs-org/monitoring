@@ -27,8 +27,7 @@ spec:
   values:
     # Operator configuration
     namespaceScope: false
-    watchNamespaces: []
-    # Empty array means operator watches all namespaces
+    # watchNamespaces not set = operator watches all namespaces
 
     # Resource limits for the operator pod
     resources:
