@@ -42,8 +42,7 @@ spec:
         scrapeConfigSelectorNilUsesHelmValues: false
 
         # Retention settings
-        retention: 15d
-        retentionSize: "50GB"
+        retention: 7d
 
         # Resource requests/limits
         resources:
@@ -56,14 +55,9 @@ spec:
         # Enable remote write receiver for external metrics ingestion
         enableRemoteWriteReceiver: true
 
-        # Storage configuration (uses default storage class)
+        # Storage configuration (using emptyDir - no persistence)
         storageSpec:
-          volumeClaimTemplate:
-            spec:
-              accessModes: ["ReadWriteOnce"]
-              resources:
-                requests:
-                  storage: 50Gi
+          emptyDir: {}
 
     # Alertmanager configuration
     alertmanager:
